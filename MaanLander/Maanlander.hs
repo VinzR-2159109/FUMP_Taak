@@ -1,4 +1,6 @@
 import System.Environment (getArgs)
+import Debug.Trace (trace)
+import Language.Haskell.TH (safe)
 
 data Maanlander = Maanlander
   { hoogte     :: Double  -- meter
@@ -13,7 +15,7 @@ type Strategie = [Maanlander] -> Integer
 
 strategie_1 :: [Maanlander] -> Integer
 strategie_1 [] = 0
-strategie_1 (ml:_) = 
+strategie_1 (ml:_) =
   let v         = snelheid ml
       h         = hoogte ml
       g         = valversnelling ml
@@ -21,41 +23,54 @@ strategie_1 (ml:_) =
       fuel      = brandstof ml
       safeSpeed = maxSnelheid ml
 
-      -- a = v^2 / (2h)
-      benodigdeRem = (v * v) / (2 * h)
+      requiredBreak = (v * v) / (2 * h)
+      break = min requiredBreak (v + g)
 
-      gewensteVersnelling = min benodigdeRem (v + g)
+      gas = min maxRem (min break fuel)
+  in round gas
 
-      -- Beperkingen: tegengas <= motorkracht && <= brandstof
-      gas = min maxRem (min gewensteVersnelling fuel)
+strategie_2 :: [Maanlander] -> Integer
+strategie_2 [] = 0
+strategie_2 (ml:_) =
+  let v         = snelheid ml
+      h         = hoogte ml
+      g         = valversnelling ml
+      maxRem    = motorkracht ml
+      fuel      = brandstof ml
+      safeSpeed = maxSnelheid ml
+
+      urgency
+        | h < 30 = 1.5
+        | h < 100 = 1.2
+        | otherwise = 1.0
+
+      requiredBreak = (v * v) / (2 * h)
+      break = urgency * requiredBreak
+
+      gas
+        | v > safeSpeed = min maxRem (min break fuel)
+        | otherwise = 0
   in round gas
 
 strategie_3 :: [Maanlander] -> Integer
 strategie_3 [] = 0
-strategie_3 (ml:rest) = round (max 0 (min maxGas adjustedGas))
-  where
-    history = ml : rest
+strategie_3 (ml:_) =
+  let v         = snelheid ml
+      g         = valversnelling ml
+      maxRem    = motorkracht ml
+      fuel      = brandstof ml
+      safeSpeed   = maxSnelheid ml
 
-    kp = 0.15
-    ki = 0.01
-    kd = 0.01
+      safetyFactor
+        | hoogte ml < 30 = 1.5
+        | hoogte ml < 100 = 1.2
+        | otherwise = 1.0
 
-    maxGas = min (motorkracht ml) (brandstof ml)
-    v_current = snelheid ml
-    target_speed = maxSnelheid ml / 2
-
-    e_current = v_current - target_speed
-    e_integral = sum (map (\m -> snelheid m - target_speed) history)
-    e_derivative = case rest of
-                     (prev:_) -> v_current - snelheid prev
-                     []       -> 0
-
-    pid_output = kp * e_current + ki * e_integral + kd * e_derivative
-    rawGas = pid_output + valversnelling ml
-
-    adjustedGas
-      | v_current - rawGas <= 0 = 0
-      | otherwise = min rawGas (valversnelling ml + v_current - 0.1)
+      targetV = safeSpeed / safetyFactor
+      break = v + g - targetV
+      
+      gas = min maxRem (min break fuel)
+  in round gas
 
 
 updateLander :: Maanlander -> Integer -> Maanlander
@@ -82,8 +97,9 @@ main = do
   args <- getArgs
   case mapM readMaybe args of
     Just [nr, h, f, m, ms, g] -> do
-      let strategie = case (round nr :: Int) of
+      let strategie = case (nr :: Double) of
                         1 -> strategie_1
+                        2 -> strategie_2
                         3 -> strategie_3
                         _ -> strategie_1
 
