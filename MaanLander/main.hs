@@ -100,9 +100,6 @@ setup window = do
           let finalMessage = landingMsg
           showRocketLanding window result finalMessage
 
-
-
-
         _ -> void $ element message # set UI.text "❌ Please fill in all input fields correctly."
 
 -- Helpers

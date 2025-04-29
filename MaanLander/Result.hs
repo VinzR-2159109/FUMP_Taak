@@ -5,7 +5,7 @@ module Result where
 import Maanlander
 import qualified Graphics.UI.Threepenny as UI
 import Graphics.UI.Threepenny.Core
-import Control.Monad (void)
+import Control.Monad
 import qualified Data.IORef as IORef
 
 -- Configuration
@@ -21,7 +21,6 @@ canvasHeight = round maxHeight + 2 * padding
 usableHeight :: Double
 usableHeight = fromIntegral (canvasHeight - 2 * padding)
 
--- Main animation
 showRocketLanding :: Window -> [Maanlander] -> String -> UI ()
 showRocketLanding window landerStates finalMessage = do
     getBody window # set children []
@@ -48,28 +47,32 @@ showRocketLanding window landerStates finalMessage = do
                 yPos = floor (fromIntegral padding + (1 - h / maxHeight) * usableHeight) - 40
 
             UI.clearCanvas canvas
-            drawRocket canvas yPos
+            drawRocket canvas lander yPos
 
             element label # set UI.text ("Hoogte: " ++ show h)
             element resultLabel # set UI.text (show lander)
 
             liftIO $ IORef.modifyIORef' countRef (+1)
         else do
+            let finalLander = last landerStates
+            let safeLanding = abs (snelheid finalLander) <= maxSnelheid finalLander
+            UI.clearCanvas canvas
+            if safeLanding
+            then drawRocket canvas finalLander (canvasHeight - padding - 40)
+            else drawExplosion canvas (canvasHeight - padding - 40)
             element label # set UI.text finalMessage
             UI.stop timer
 
     UI.start timer
 
--- Draw rocket at a vertical position
-drawRocket :: UI.Canvas -> Int -> UI ()
-drawRocket canvas y = do
-    UI.clearCanvas canvas
+-- Draw rocket with optional flame
+drawRocket :: UI.Canvas -> Maanlander -> Int -> UI ()
+drawRocket canvas lander y = do
     drawScale canvas
 
+    -- Rocket body
     UI.beginPath canvas
     UI.set' UI.fillStyle (UI.htmlColor "white") canvas
-
-    -- Rocket body
     UI.fillRect (190, fromIntegral y) 20 40 canvas
 
     -- Rocket nose
@@ -78,6 +81,33 @@ drawRocket canvas y = do
     UI.lineTo (200, fromIntegral y - 20) canvas
     UI.lineTo (210, fromIntegral y) canvas
     UI.closePath canvas
+    UI.fill canvas
+
+    -- Flame if falling
+    when (snelheid lander > 0) $ do
+        UI.beginPath canvas
+        UI.set' UI.fillStyle (UI.htmlColor "orange") canvas
+        UI.moveTo (190, fromIntegral y + 40) canvas
+        UI.lineTo (200, fromIntegral y + 60) canvas
+        UI.lineTo (210, fromIntegral y + 40) canvas
+        UI.closePath canvas
+        UI.fill canvas
+
+-- Draw explosion
+drawExplosion :: UI.Canvas -> Int -> UI ()
+drawExplosion canvas y = do
+    drawScale canvas
+
+    -- Explosion circle
+    UI.beginPath canvas
+    UI.set' UI.fillStyle (UI.htmlColor "red") canvas
+    UI.arc (200, fromIntegral y) 30 0 (2 * pi) canvas
+    UI.fill canvas
+
+    -- Yellow core
+    UI.beginPath canvas
+    UI.set' UI.fillStyle (UI.htmlColor "yellow") canvas
+    UI.arc (200, fromIntegral y) 15 0 (2 * pi) canvas
     UI.fill canvas
 
 -- Draw height scale and ground line
