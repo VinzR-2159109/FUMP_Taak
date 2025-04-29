@@ -12,8 +12,14 @@ import qualified Data.IORef as IORef
 maxHeight :: Double
 maxHeight = 800.0
 
+padding :: Int
+padding = 50
+
 canvasHeight :: Int
-canvasHeight = round (maxHeight + 100)
+canvasHeight = round maxHeight + 2 * padding
+
+usableHeight :: Double
+usableHeight = fromIntegral (canvasHeight - 2 * padding)
 
 -- Main animation
 showRocketLanding :: Window -> [Maanlander] -> String -> UI ()
@@ -39,7 +45,7 @@ showRocketLanding window landerStates finalMessage = do
         then do
             let lander = landerStates !! count
                 h = hoogte lander
-                yPos = floor (fromIntegral canvasHeight - (h / maxHeight) * fromIntegral canvasHeight) - 40
+                yPos = floor (fromIntegral padding + (1 - h / maxHeight) * usableHeight) - 40
 
             UI.clearCanvas canvas
             drawRocket canvas yPos
@@ -84,13 +90,13 @@ drawScale canvas = do
 
     -- Ground line
     UI.beginPath canvas
-    UI.moveTo (100, fromIntegral canvasHeight) canvas
-    UI.lineTo (400, fromIntegral canvasHeight) canvas
+    UI.moveTo (100, fromIntegral (canvasHeight - padding)) canvas
+    UI.lineTo (400, fromIntegral (canvasHeight - padding)) canvas
     UI.stroke canvas
 
     -- Height ticks and labels
     mapM_ (\h -> do
-        let y = fromIntegral canvasHeight - (h / maxHeight) * fromIntegral canvasHeight
+        let y = fromIntegral padding + (1 - h / maxHeight) * usableHeight
         UI.moveTo (30, y) canvas
         UI.lineTo (40, y) canvas
         UI.stroke canvas
