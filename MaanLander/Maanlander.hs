@@ -1,3 +1,5 @@
+module Maanlander where
+
 import System.Environment (getArgs)
 import Debug.Trace (trace)
 import Language.Haskell.TH (safe)
