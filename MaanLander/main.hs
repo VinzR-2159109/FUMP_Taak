@@ -5,7 +5,7 @@
 module Main where
 
 import Maanlander
-import Result (showResult)
+import Result
 
 import qualified Graphics.UI.Threepenny as UI
 import qualified Text.Read as TR
@@ -29,7 +29,7 @@ setup window = do
     selectStrategy <- UI.select #+ map (\s -> UI.option #+ [string s]) ["Strategie 1", "Strategie 2", "Strategie 3"]
 
     -- Sliders
-    (sliderHeight, valueHeight) <- mkSliderWithValue (0, 1000) 500
+    (sliderHeight, valueHeight) <- mkSliderWithValue (0, 800) 500
     (sliderFuel, valueFuel) <- mkSliderWithValue (0, 1000) 500
     (sliderMotor, valueMotor) <- mkSliderWithValue (0, 500) 250
     (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (0, 50) 5
@@ -62,7 +62,6 @@ setup window = do
             ] # set UI.style [("display", "flex"),("flex-direction", "column"), ("gap", "10px"), ("align-items", "left")] 
           ]
       ]
-
 
     on UI.click btnSimulate $ \_ -> do
       stratIndex <- get UI.selection selectStrategy
@@ -98,7 +97,11 @@ setup window = do
               outputText = unlines outputLines
 
           liftIO $ writeFile "maanlander_output.txt" outputText
-          showResult window outputText
+          let finalMessage = landingMsg
+          showRocketLanding window result finalMessage
+
+
+
 
         _ -> void $ element message # set UI.text "❌ Please fill in all input fields correctly."
 
