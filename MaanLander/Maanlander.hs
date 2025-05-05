@@ -11,6 +11,7 @@ data Maanlander = Maanlander
   , motorkracht :: Double -- maximale gas per seconde
   , maxSnelheid :: Double -- maximale veilige landingssnelheid
   , valversnelling :: Double -- m/s²
+  , gas :: Integer -- remkracht in m/s
   } deriving (Show)
 
 type Strategie = [Maanlander] -> Integer
@@ -81,11 +82,12 @@ updateLander ml gas =
       v' = fromIntegral (round ((snelheid ml + a) * 100)) / 100
       h'    = hoogte ml - v'
       fuel' = brandstof ml - fromIntegral gas
-  in ml { hoogte = max 0 h', snelheid = v', brandstof = max 0 fuel' }
+  in ml { hoogte = max 0 h', snelheid = v', brandstof = max 0 fuel', gas = gas }
 
 simulate :: Strategie -> Maanlander -> [Maanlander]
 simulate strategie init = simulate' [init]
   where
+    simulate' [] = []
     simulate' (current:rest)
       | hoogte current <= 0 = reverse (current : rest)
       | otherwise =
@@ -105,7 +107,7 @@ main = do
                         3 -> strategie_3
                         _ -> strategie_1
 
-          lander = Maanlander h 0 f m ms g
+          lander = Maanlander h 0 f m ms g 0
           result = simulate strategie lander
           final  = last result
           landingMsg =

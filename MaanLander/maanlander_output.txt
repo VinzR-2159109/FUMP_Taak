@@ -1,110 +1,24 @@
-Maanlander {hoogte = 500.0, snelheid = 0.0, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 495.3, snelheid = 4.7, brandstof = 501.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 489.90000000000003, snelheid = 5.4, brandstof = 498.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 484.8, snelheid = 5.1, brandstof = 494.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 480.0, snelheid = 4.8, brandstof = 490.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 475.5, snelheid = 4.5, brandstof = 486.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 470.3, snelheid = 5.2, brandstof = 483.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 465.40000000000003, snelheid = 4.9, brandstof = 479.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 460.8, snelheid = 4.6, brandstof = 475.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 455.5, snelheid = 5.3, brandstof = 472.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 450.5, snelheid = 5.0, brandstof = 468.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 445.8, snelheid = 4.7, brandstof = 464.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 440.40000000000003, snelheid = 5.4, brandstof = 461.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 435.3, snelheid = 5.1, brandstof = 457.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 430.5, snelheid = 4.8, brandstof = 453.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 426.0, snelheid = 4.5, brandstof = 449.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 420.8, snelheid = 5.2, brandstof = 446.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 415.90000000000003, snelheid = 4.9, brandstof = 442.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 411.3, snelheid = 4.6, brandstof = 438.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 406.0, snelheid = 5.3, brandstof = 435.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 401.0, snelheid = 5.0, brandstof = 431.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 396.3, snelheid = 4.7, brandstof = 427.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 390.90000000000003, snelheid = 5.4, brandstof = 424.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 385.8, snelheid = 5.1, brandstof = 420.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 381.0, snelheid = 4.8, brandstof = 416.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 376.5, snelheid = 4.5, brandstof = 412.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 371.3, snelheid = 5.2, brandstof = 409.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 366.40000000000003, snelheid = 4.9, brandstof = 405.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 361.8, snelheid = 4.6, brandstof = 401.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 356.5, snelheid = 5.3, brandstof = 398.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 351.5, snelheid = 5.0, brandstof = 394.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 346.8, snelheid = 4.7, brandstof = 390.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 341.40000000000003, snelheid = 5.4, brandstof = 387.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 336.3, snelheid = 5.1, brandstof = 383.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 331.5, snelheid = 4.8, brandstof = 379.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 327.0, snelheid = 4.5, brandstof = 375.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 321.8, snelheid = 5.2, brandstof = 372.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 316.90000000000003, snelheid = 4.9, brandstof = 368.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 312.3, snelheid = 4.6, brandstof = 364.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 307.0, snelheid = 5.3, brandstof = 361.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 302.0, snelheid = 5.0, brandstof = 357.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 297.3, snelheid = 4.7, brandstof = 353.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 291.90000000000003, snelheid = 5.4, brandstof = 350.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 286.8, snelheid = 5.1, brandstof = 346.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 282.0, snelheid = 4.8, brandstof = 342.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 277.5, snelheid = 4.5, brandstof = 338.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 272.3, snelheid = 5.2, brandstof = 335.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 267.40000000000003, snelheid = 4.9, brandstof = 331.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 262.8, snelheid = 4.6, brandstof = 327.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 257.5, snelheid = 5.3, brandstof = 324.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 252.5, snelheid = 5.0, brandstof = 320.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 247.8, snelheid = 4.7, brandstof = 316.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 242.4, snelheid = 5.4, brandstof = 313.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 237.3, snelheid = 5.1, brandstof = 309.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 232.5, snelheid = 4.8, brandstof = 305.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 228.0, snelheid = 4.5, brandstof = 301.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 222.8, snelheid = 5.2, brandstof = 298.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 217.9, snelheid = 4.9, brandstof = 294.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 213.3, snelheid = 4.6, brandstof = 290.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 208.0, snelheid = 5.3, brandstof = 287.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 203.0, snelheid = 5.0, brandstof = 283.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 198.3, snelheid = 4.7, brandstof = 279.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 192.9, snelheid = 5.4, brandstof = 276.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 187.8, snelheid = 5.1, brandstof = 272.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 183.0, snelheid = 4.8, brandstof = 268.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 178.5, snelheid = 4.5, brandstof = 264.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 173.3, snelheid = 5.2, brandstof = 261.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 168.4, snelheid = 4.9, brandstof = 257.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 163.8, snelheid = 4.6, brandstof = 253.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 158.5, snelheid = 5.3, brandstof = 250.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 153.5, snelheid = 5.0, brandstof = 246.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 148.8, snelheid = 4.7, brandstof = 242.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 143.4, snelheid = 5.4, brandstof = 239.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 138.3, snelheid = 5.1, brandstof = 235.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 133.5, snelheid = 4.8, brandstof = 231.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 129.0, snelheid = 4.5, brandstof = 227.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 123.8, snelheid = 5.2, brandstof = 224.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 118.89999999999999, snelheid = 4.9, brandstof = 220.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 114.3, snelheid = 4.6, brandstof = 216.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 109.0, snelheid = 5.3, brandstof = 213.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 104.0, snelheid = 5.0, brandstof = 209.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 99.3, snelheid = 4.7, brandstof = 205.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 94.89999999999999, snelheid = 4.4, brandstof = 201.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 90.8, snelheid = 4.1, brandstof = 197.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 87.0, snelheid = 3.8, brandstof = 193.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 82.5, snelheid = 4.5, brandstof = 190.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 78.3, snelheid = 4.2, brandstof = 186.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 74.39999999999999, snelheid = 3.9, brandstof = 182.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 69.8, snelheid = 4.6, brandstof = 179.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 65.5, snelheid = 4.3, brandstof = 175.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 61.5, snelheid = 4.0, brandstof = 171.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 57.8, snelheid = 3.7, brandstof = 167.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 53.4, snelheid = 4.4, brandstof = 164.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 49.3, snelheid = 4.1, brandstof = 160.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 45.5, snelheid = 3.8, brandstof = 156.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 41.0, snelheid = 4.5, brandstof = 153.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 36.8, snelheid = 4.2, brandstof = 149.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 32.9, snelheid = 3.9, brandstof = 145.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 28.299999999999997, snelheid = 4.6, brandstof = 142.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 24.999999999999996, snelheid = 3.3, brandstof = 137.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 21.999999999999996, snelheid = 3.0, brandstof = 133.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 18.299999999999997, snelheid = 3.7, brandstof = 130.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 14.899999999999997, snelheid = 3.4, brandstof = 126.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 11.799999999999997, snelheid = 3.1, brandstof = 122.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 7.999999999999997, snelheid = 3.8, brandstof = 119.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 4.499999999999997, snelheid = 3.5, brandstof = 115.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 1.2999999999999972, snelheid = 3.2, brandstof = 111.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
-Maanlander {hoogte = 0.0, snelheid = 2.9, brandstof = 107.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7}
+Maanlander {hoogte = 500.0, snelheid = 0.0, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 496.3, snelheid = 3.7, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 488.90000000000003, snelheid = 7.4, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 477.8, snelheid = 11.1, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 463.0, snelheid = 14.8, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 444.5, snelheid = 18.5, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 422.3, snelheid = 22.2, brandstof = 500.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 0}
+Maanlander {hoogte = 397.40000000000003, snelheid = 24.9, brandstof = 499.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 1}
+Maanlander {hoogte = 369.8, snelheid = 27.6, brandstof = 498.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 1}
+Maanlander {hoogte = 339.5, snelheid = 30.3, brandstof = 497.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 1}
+Maanlander {hoogte = 306.5, snelheid = 33.0, brandstof = 496.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 1}
+Maanlander {hoogte = 271.8, snelheid = 34.7, brandstof = 494.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 2}
+Maanlander {hoogte = 235.4, snelheid = 36.4, brandstof = 492.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 2}
+Maanlander {hoogte = 198.3, snelheid = 37.1, brandstof = 489.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 3}
+Maanlander {hoogte = 160.5, snelheid = 37.8, brandstof = 486.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 3}
+Maanlander {hoogte = 123.0, snelheid = 37.5, brandstof = 482.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 4}
+Maanlander {hoogte = 87.8, snelheid = 35.2, brandstof = 476.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 6}
+Maanlander {hoogte = 55.9, snelheid = 31.9, brandstof = 469.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 7}
+Maanlander {hoogte = 29.299999999999997, snelheid = 26.6, brandstof = 460.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 9}
+Maanlander {hoogte = 10.999999999999996, snelheid = 18.3, brandstof = 448.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 12}
+Maanlander {hoogte = 3.9999999999999964, snelheid = 7.0, brandstof = 433.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 15}
+Maanlander {hoogte = 0.0, snelheid = 4.7, brandstof = 427.0, motorkracht = 250.0, maxSnelheid = 5.0, valversnelling = 3.7, gas = 6}
 
 ✅ Success: Landed safely!

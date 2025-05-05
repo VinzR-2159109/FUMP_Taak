@@ -85,7 +85,7 @@ setup window = do
                             3 -> strategie_3
                             _ -> strategie_1
 
-              initLander = Maanlander h 0 f m s g
+              initLander = Maanlander h 0 f m s g 0
               result = simulate strategie initLander
               final  = last result
               landingMsg =

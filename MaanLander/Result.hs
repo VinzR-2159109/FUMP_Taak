@@ -56,11 +56,14 @@ showRocketLanding window landerStates finalMessage = do
         else do
             let finalLander = last landerStates
             let safeLanding = abs (snelheid finalLander) <= maxSnelheid finalLander
+
             UI.clearCanvas canvas
+
             if safeLanding
-            then drawRocket canvas finalLander (canvasHeight - padding - 40)
-            else drawExplosion canvas (canvasHeight - padding - 40)
+                then drawRocket canvas finalLander (canvasHeight - padding - 40)
+                else drawExplosion canvas (canvasHeight - padding - 40)
             element label # set UI.text finalMessage
+
             UI.stop timer
 
     UI.start timer
@@ -84,7 +87,7 @@ drawRocket canvas lander y = do
     UI.fill canvas
 
     -- Flame if falling
-    when (snelheid lander > 0) $ do
+    when (snelheid lander > 0 && hoogte lander > 0 && gas lander > 0) $ do
         UI.beginPath canvas
         UI.set' UI.fillStyle (UI.htmlColor "orange") canvas
         UI.moveTo (190, fromIntegral y + 40) canvas
