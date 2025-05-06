@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ghc typeclass.hs -o run
+ghc main.hs -o run
 
 if [ -f run ]; then
     ./run
