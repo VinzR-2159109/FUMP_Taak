@@ -30,9 +30,9 @@ setup window = do
 
     -- Sliders
     (sliderHeight, valueHeight) <- mkSliderWithValue (0, 800) 500
-    (sliderFuel, valueFuel) <- mkSliderWithValue (0, 1000) 500
-    (sliderMotor, valueMotor) <- mkSliderWithValue (0, 500) 250
-    (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (0, 50) 5
+    (sliderFuel, valueFuel) <- mkSliderWithValue (0, 1000) 200
+    (sliderMotor, valueMotor) <- mkSliderWithValue (0, 20) 5
+    (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (0, 50) 10
 
     -- Gravity dropdown (Planets)
     selectGravity <- UI.select #+ map (\s -> UI.option #+ [string s]) 

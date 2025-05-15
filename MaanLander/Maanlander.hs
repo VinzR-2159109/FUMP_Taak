@@ -36,24 +36,15 @@ strategie_2 :: [Maanlander] -> Integer
 strategie_2 [] = 0
 strategie_2 (ml:_) =
   let v         = snelheid ml
-      h         = hoogte ml
       g         = valversnelling ml
       maxRem    = motorkracht ml
       fuel      = brandstof ml
       safeSpeed = maxSnelheid ml
 
-      urgency
-        | h < 30 = 1.5
-        | h < 100 = 1.2
-        | otherwise = 1.0
+      maxGas = floor (min maxRem fuel)
+      requiredBreak = ceiling (max 0 (v + g - safeSpeed))
+  in min maxGas requiredBreak
 
-      requiredBreak = (v * v) / (2 * h)
-      break = urgency * requiredBreak
-
-      gas
-        | v > safeSpeed = min maxRem (min break fuel)
-        | otherwise = 0
-  in round gas
 
 strategie_3 :: [Maanlander] -> Integer
 strategie_3 [] = 0
@@ -65,9 +56,9 @@ strategie_3 (ml:_) =
       safeSpeed   = maxSnelheid ml
 
       safetyFactor
-        | hoogte ml < 30 = 1.5
-        | hoogte ml < 100 = 1.2
-        | otherwise = 1.0
+        | hoogte ml < 100 = 2
+        | hoogte ml < 300 = 1
+        | otherwise = 0
 
       targetV = safeSpeed / safetyFactor
       break = v + g - targetV
