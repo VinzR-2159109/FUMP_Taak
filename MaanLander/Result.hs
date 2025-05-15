@@ -26,47 +26,61 @@ showRocketLanding window landerStates finalMessage = do
     getBody window # set children []
 
     canvas <- UI.canvas
-        # set UI.width 400
+        # set UI.width  400
         # set UI.height canvasHeight
-        # set UI.style [("background-color", "black")]
+        # set UI.style [("background-color","black")]
 
-    label <- UI.span
-    resultLabel <- UI.span # set UI.style [("white-space", "pre-wrap")]
+    label       <- UI.span
+    resultLabel <- UI.span # set UI.style [("white-space","pre-wrap")]
 
     void $ getBody window #+ [element canvas, element label, UI.br, element resultLabel]
 
-    timer <- UI.timer # set UI.interval 100
+    -- remember the very first fuel level
+    let initialFuel = brandstof (head landerStates)
+
+    timer    <- UI.timer # set UI.interval 100
     countRef <- liftIO $ IORef.newIORef 0
 
     on UI.tick timer $ \_ -> do
         count <- liftIO $ IORef.readIORef countRef
+
         if count < length landerStates
         then do
-            let lander = landerStates !! count
-                h = hoogte lander
-                yPos = floor (fromIntegral padding + (1 - h / maxHeight) * usableHeight) - 40
+            let ml     = landerStates !! count
+                h      = hoogte ml
+                yPos   = floor ( fromIntegral padding
+                               + (1 - h / maxHeight) * usableHeight
+                               ) - 40
+                currFuel = brandstof ml
 
             UI.clearCanvas canvas
-            drawRocket canvas lander yPos
 
-            element label # set UI.text ("Hoogte: " ++ show h)
-            element resultLabel # set UI.text (show lander)
+            drawFuelBar canvas initialFuel currFuel
+            drawRocket  canvas ml yPos
+
+            element resultLabel # set UI.text
+              (  "Hoogte: " ++ show (hoogte ml) ++ " m\n"
+              ++ "Snelheid: " ++ show (snelheid ml) ++ " m/s\n"
+              ++ "Brandstof: " ++ show (brandstof ml) ++ " L"
+              )
 
             liftIO $ IORef.modifyIORef' countRef (+1)
         else do
             let finalLander = last landerStates
-            let safeLanding = abs (snelheid finalLander) <= maxSnelheid finalLander
+                safeLanding = abs (snelheid finalLander) <= maxSnelheid finalLander
+                yEnd        = canvasHeight - padding - 40
 
             UI.clearCanvas canvas
 
             if safeLanding
-                then drawRocket canvas finalLander (canvasHeight - padding - 40)
-                else drawExplosion canvas (canvasHeight - padding - 40)
-            element label # set UI.text finalMessage
+              then drawRocket    canvas finalLander yEnd
+              else drawExplosion canvas yEnd
 
+            element resultLabel # set UI.text finalMessage
             UI.stop timer
 
     UI.start timer
+
 
 -- Draw rocket with optional flame
 drawRocket :: UI.Canvas -> Maanlander -> Int -> UI ()
@@ -135,3 +149,21 @@ drawScale canvas = do
         UI.stroke canvas
         UI.fillText (show (round h) ++ "m") (5, y - 5) canvas
       ) [0,100..maxHeight]
+
+drawFuelBar :: UI.Canvas -> Double -> Double -> UI ()
+drawFuelBar canvas initialFuel currFuel = do
+    let
+        barW       = 200     :: Double
+        barH       = 10      :: Double
+        barX       = 10      :: Double
+        barY       = fromIntegral canvasHeight - 2 * barH
+        frac       = currFuel / initialFuel
+        filledW    = frac * barW
+
+    UI.beginPath canvas
+    UI.set' UI.fillStyle (UI.htmlColor "grey") canvas
+    UI.fillRect (barX, barY) barW barH canvas
+
+    UI.beginPath canvas
+    UI.set' UI.fillStyle (UI.htmlColor "lime") canvas
+    UI.fillRect (barX, barY) filledW barH canvas
