@@ -30,7 +30,7 @@ strategie_1 (ml:_) =
       break = min requiredBreak (v + g)
 
       gas = min maxRem (min break fuel)
-  in round gas
+  in ceiling gas
 
 strategie_2 :: [Maanlander] -> Integer
 strategie_2 [] = 0
@@ -41,9 +41,10 @@ strategie_2 (ml:_) =
       fuel      = brandstof ml
       safeSpeed = maxSnelheid ml
 
-      maxGas = floor (min maxRem fuel)
-      requiredBreak = ceiling (max 0 (v + g - safeSpeed))
-  in min maxGas requiredBreak
+      
+      requiredBreak = (max 0 (v + g - safeSpeed))
+      gas = min maxRem (min requiredBreak fuel)
+  in ceiling gas
 
 
 strategie_3 :: [Maanlander] -> Integer
@@ -56,14 +57,15 @@ strategie_3 (ml:_) =
       safeSpeed   = maxSnelheid ml
 
       safetyFactor
+        | hoogte ml < 30 = 5
         | hoogte ml < 100 = 2
         | hoogte ml < 300 = 1
-        | otherwise = 0
+        | otherwise = 0.75
 
       targetV = safeSpeed / safetyFactor
-      break = v + g - targetV
+      requiredBreak = v + g - targetV
       
-      gas = min maxRem (min break fuel)
+      gas = min maxRem (min requiredBreak fuel)
   in round gas
 
 

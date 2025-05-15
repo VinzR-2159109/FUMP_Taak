@@ -30,15 +30,15 @@ setup window = do
 
     -- Sliders
     (sliderHeight, valueHeight) <- mkSliderWithValue (0, 800) 500
-    (sliderFuel, valueFuel) <- mkSliderWithValue (0, 1000) 200
-    (sliderMotor, valueMotor) <- mkSliderWithValue (0, 20) 5
-    (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (0, 50) 10
+    (sliderFuel, valueFuel) <- mkSliderWithValue (0, 1000) 500
+    (sliderMotor, valueMotor) <- mkSliderWithValue (0, 100) 50
+    (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (0, 50) 15
 
     -- Gravity dropdown (Planets)
     selectGravity <- UI.select #+ map (\s -> UI.option #+ [string s]) 
       ["Mercury (3.7)", "Venus (8.87)", "Earth (9.81)",
-      "Moon (1.62)", "Mars (3.71)" , "Jupiter (24.79)",
-      "Saturn (10.44)", "Uranus (8.69)", "Neptune (11.15)"]
+      "Moon (1.62)", "Mars (3.71)" , "Saturn (10.44)", 
+      "Uranus (8.69)", "Neptune (11.15)"]
 
     -- Simulate button
     btnSimulate <- UI.button #+ [string "Simulate"]
@@ -74,7 +74,7 @@ setup window = do
       mSafe   <- fmap Text.Read.readMaybe (get value sliderSafeSpeed) 
       mGrav <- do
         selected <- get UI.selection selectGravity
-        let gravities = [3.7, 8.87, 9.81, 1.62, 3.71, 24.79, 10.44, 8.69, 11.15]
+        let gravities = [3.7, 8.87, 9.81, 1.62, 3.71, 10.44, 8.69, 11.15]
         return $ fmap (gravities !!) selected
 
       case (mStrategy, mHeight, mFuel, mMotor, mSafe, mGrav) of
