@@ -1,3 +1,4 @@
+--https://www.calculatorsoup.com/calculators/physics/velocity-calculator-vuas.php
 module Maanlander where
 
 import System.Environment (getArgs)
@@ -11,12 +12,12 @@ data Maanlander = Maanlander
   , motorkracht :: Double -- maximale gas per seconde
   , maxSnelheid :: Double -- maximale veilige landingssnelheid
   , valversnelling :: Double -- m/s²
-  , gas :: Integer -- remkracht in m/s
+  , gas :: Double -- remkracht in m/s
   } deriving (Show)
 
-type Strategie = [Maanlander] -> Integer
+type Strategie = [Maanlander] -> Double
 
-strategie_1 :: [Maanlander] -> Integer
+strategie_1 :: [Maanlander] -> Double
 strategie_1 [] = 0
 strategie_1 (ml:_) =
   let v         = snelheid ml
@@ -27,12 +28,12 @@ strategie_1 (ml:_) =
       safeSpeed = maxSnelheid ml
 
       requiredBreak = (v * v) / (2 * h)
-      break = min requiredBreak (v + g)
+      break = min requiredBreak (v + g - safeSpeed)
 
       gas = min maxRem (min break fuel)
-  in ceiling gas
+  in round2 gas
 
-strategie_2 :: [Maanlander] -> Integer
+strategie_2 :: [Maanlander] -> Double
 strategie_2 [] = 0
 strategie_2 (ml:_) =
   let v         = snelheid ml
@@ -44,10 +45,10 @@ strategie_2 (ml:_) =
       
       requiredBreak = (max 0 (v + g - safeSpeed))
       gas = min maxRem (min requiredBreak fuel)
-  in ceiling gas
+  in round2 gas
 
 
-strategie_3 :: [Maanlander] -> Integer
+strategie_3 :: [Maanlander] -> Double
 strategie_3 [] = 0
 strategie_3 (ml:_) =
   let v         = snelheid ml
@@ -66,15 +67,15 @@ strategie_3 (ml:_) =
       requiredBreak = v + g - targetV
       
       gas = min maxRem (min requiredBreak fuel)
-  in round gas
+  in round2 gas
 
 
-updateLander :: Maanlander -> Integer -> Maanlander
+updateLander :: Maanlander -> Double -> Maanlander
 updateLander ml gas =
-  let a     = valversnelling ml - fromIntegral gas
-      v' = fromIntegral (round ((snelheid ml + a) * 100)) / 100
-      h'    = hoogte ml - v'
-      fuel' = brandstof ml - fromIntegral gas
+  let a     = round2 $ valversnelling ml - gas
+      v'    = round2 $ snelheid ml + a
+      h'    = round2 $ hoogte ml - v'
+      fuel' = round2 $ brandstof ml - gas
   in ml { hoogte = max 0 h', snelheid = v', brandstof = max 0 fuel', gas = gas }
 
 simulate :: Strategie -> Maanlander -> [Maanlander]
@@ -119,3 +120,6 @@ readMaybe :: Read a => String -> Maybe a
 readMaybe s = case reads s of
   [(val, "")] -> Just val
   _           -> Nothing
+
+round2 :: Double -> Double
+round2 x = fromIntegral (round (x * 100)) / 100

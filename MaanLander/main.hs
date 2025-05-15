@@ -29,10 +29,10 @@ setup window = do
     selectStrategy <- UI.select #+ map (\s -> UI.option #+ [string s]) ["Strategie 1", "Strategie 2", "Strategie 3"]
 
     -- Sliders
-    (sliderHeight, valueHeight) <- mkSliderWithValue (0, 800) 500
+    (sliderHeight, valueHeight) <- mkSliderWithValue (100, 800) 500
     (sliderFuel, valueFuel) <- mkSliderWithValue (0, 1000) 500
-    (sliderMotor, valueMotor) <- mkSliderWithValue (0, 100) 50
-    (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (0, 50) 15
+    (sliderMotor, valueMotor) <- mkSliderWithValue (15, 100) 50
+    (sliderSafeSpeed, valueSafeSpeed) <- mkSliderWithValue (5, 20) 10
 
     -- Gravity dropdown (Planets)
     selectGravity <- UI.select #+ map (\s -> UI.option #+ [string s]) 
