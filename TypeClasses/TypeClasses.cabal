@@ -1,0 +1,32 @@
+cabal-version:      3.0
+
+name:               TypeClasses
+version:            0.1.0.0
+
+common warnings
+    ghc-options: -Wall
+
+library
+  hs-source-dirs:     .
+  exposed-modules:    Person.Person
+  other-modules:      
+    Metric
+    City.City
+    Person.Age
+    Person.Gender
+    Person.Ethnicity
+    Person.EducationLevel
+    Person.Personality
+  build-depends:      base >=4.14 && <4.20
+  default-language:   Haskell2010
+
+executable TypeClasses
+  import:             warnings
+  hs-source-dirs:
+    .
+    City
+    Person
+  main-is:            Main.hs
+  build-depends:
+    base >=4.14 && <4.20
+  default-language:   Haskell2010
