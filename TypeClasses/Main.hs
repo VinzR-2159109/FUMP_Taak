@@ -1,9 +1,16 @@
 module Main where
 
 import Metric
-import City
+
 import Tree
 import Image
+
+import Person.Person       (Person(..))
+import Person.Age          (Age(..))
+import Person.Gender       (Gender(..))
+import Person.Ethnicity    (Ethnicity(..))
+import Person.Education    (Education(..))
+import Person.Personality  (Personality(..))
 
 filterSimilar :: Metric a => [a] -> Double -> a -> [a]
 filterSimilar elems pct ref =  filter (\e -> similarity e ref >= pct/100) elems
@@ -30,16 +37,39 @@ canReach allNodes start end maxStep = bfs [] [start]
 
 main :: IO ()
 main = do
-  -- Cities
-  let cityA = City "Alpha" (0.1,0.2) 10000 (Circle 5)
-      cityB = City "Beta"  (0.15,0.25) 12000 (Circle 5.2)
-      cityC = City "Gamma" (0.8,0.9)   4000  (Square 3)
-      cities = [cityA, cityB, cityC]
+  -- Persons
+  let personA = Person
+        { name        = "Alice"
+        , age         = Age 30
+        , gender      = Female
+        , ethnicity   = Asian
+        , education   = Bachelors
+        , personality = Red
+        }
+      personB = Person
+        { name        = "Bob"
+        , age         = Age 35
+        , gender      = Male
+        , ethnicity   = White
+        , education   = Masters
+        , personality = Yellow
+        }
+      personC = Person
+        { name        = "Carol"
+        , age         = Age 28
+        , gender      = Female
+        , ethnicity   = Hispanic
+        , education   = Secondary
+        , personality = Blue
+        }
+      people = [personA, personB, personC]
 
-  putStrLn "Cities:"
-  putStrLn $ "  filterSimilar (>80% to Alpha): " ++ show (filterSimilar cities 80 cityA)
-  putStrLn $ "  checkTriangle: " ++ show (checkTriangle cities)
-  putStrLn $ "  canReach Alpha→Gamma with maxStep=0.2: " ++ show (canReach cities cityA cityC 0.2)
+  putStrLn "\n=== Persons ==="
+  putStrLn $ "distance Alice↔Bob:   " ++ show (distance personA personB)
+  putStrLn $ "similarity Alice↔Bob: " ++ show (similarity personA personB)
+  putStrLn $ "filterSimilar (>70% to Alice): " ++ show (filterSimilar people 70 personA)
+  putStrLn $ "checkTriangle: " ++ show (checkTriangle people)
+  putStrLn $ "canReach Alice→Carol (maxStep=0.2): " ++ show (canReach people personA personC 0.2)
 
   -- Trees
   let t1 = Node 1 (Leaf 2) (Leaf 3)                    :: Tree Int
@@ -47,7 +77,7 @@ main = do
       t3 = Leaf 2                                      :: Tree Int
       trees = [t1, t2, t3]
 
-  putStrLn "\nTrees:"
+  putStrLn "\n=== Trees ==="
   putStrLn $ "  Depths: " ++ show (treeDepth t1) ++ " vs " ++ show (treeDepth t2)
   putStrLn $ "  Node counts: " ++ show (nodeCount t1) ++ " vs " ++ show (nodeCount t2)
   putStrLn $ "  structureDistance t1 t2: " ++ show (structureDistance t1 t2)
@@ -63,7 +93,7 @@ main = do
       img2 = Image{ width  = 2, height = 2, pixels = [ [(0,0,0),(250,250,250)], [(250,0,0),(0,250,0)]]}
       images = [img1, img2]
 
-  putStrLn "\nImages example:"
+  putStrLn "\n=== Images ==="
   putStrLn $ "  distance img1 img2:   " ++ show (distance img1 img2)
   putStrLn $ "  similarity img1 img2: " ++ show (similarity img1 img2)
   putStrLn $ "  filterSimilar (>90% to img1): " ++ show (filterSimilar images 90 img1)

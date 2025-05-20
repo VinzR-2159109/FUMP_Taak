@@ -8,9 +8,16 @@ executable typeclasses
     hs-source-dirs:     .
     other-modules:      
         Metric
-        City
         Tree
         Image
+
+        Person.Age
+        Person.Education
+        Person.Ethnicity
+        Person.Gender
+        Person.Personality
+        Person.Person
+
     default-language:   Haskell2010
 
     build-depends:
