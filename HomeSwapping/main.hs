@@ -22,4 +22,7 @@ main = do
       putStrLn "Verhuisplan: "
       mapM_ (\(o,d) -> putStrLn $ "  " ++ show o ++ " -> " ++ show d) plan
 
-    _ -> putStrLn "Usage: homeswapping-gen <n> <min_c> <max_c> <output.yaml>"
+    _ -> putStrLn "Usage: homeswapping-gen <n> <min_c> <max_c> <input.yaml>"
+
+
+-- cabal run homeswapping -- 5 2 3 input.yaml
