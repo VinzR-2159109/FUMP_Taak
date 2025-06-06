@@ -20,8 +20,8 @@ maxMatching pairs = do
       where
         go []     = return False
         go (v:vs) = do
-          visited <- readArray seen v
-          if visited
+          isVisited <- readArray seen v
+          if isVisited
             then go vs
             else do
               writeArray seen v True

@@ -19,7 +19,6 @@ generateYaml n min_c max_c = do
   where
     makeLine :: Int -> IO String
     makeLine i = do
-
       g1 <- newStdGen
       let k = head (randomRs (min_c, max_c) g1)      
       g2 <- newStdGen

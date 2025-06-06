@@ -20,7 +20,7 @@ readInput :: FilePath -> IO [(Int, [Int])]
 readInput filePath = do
   content <- readFile filePath
   let rawLines   = lines content
-      cleaned    = [ trim l | l <- rawLines, not (null (trim l)), head (trim l) /= '#']
+      cleaned    = [trim l | l <- rawLines, not (null (trim l)), head (trim l) /= '#']
 
       homesLine  = head [ l | l <- cleaned, "homes:" `isPrefixOf` l ]
       n          = read (trim (drop 6 homesLine)) :: Int
